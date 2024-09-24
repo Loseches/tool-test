@@ -5,24 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>图片与Base64转换工具</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>图片与Base64转换工具</h1>
-    
-    <label for="imageInput">选择图片：</label>
-    <input type="file" id="imageInput" />
-    <textarea id="base64Output" placeholder="Base64输出将在此处显示" rows="5"></textarea>
-    <button onclick="convertImageToBase64()">转换为Base64</button>
-    
-    <h2>Base64转图片</h2>
-    <textarea id="base64Input" placeholder="在此处粘贴Base64字符串" rows="5"></textarea>
-    <button onclick="convertBase64ToImage()">转换为图片</button>
-    <div id="imageOutput"></div>
+    <div class="container">
+        <h1><i class="fas fa-image"></i> 图片与Base64转换工具</h1>
+        
+        <div class="tool">
+            <h2>图片转Base64</h2>
+            <label for="imageInput">选择图片：</label>
+            <input type="file" id="imageInput" />
+            <textarea id="base64Output" placeholder="Base64输出将在此处显示" rows="5"></textarea>
+            <button onclick="convertImageToBase64()"><i class="fas fa-upload"></i> 转换为Base64</button>
+        </div>
+        
+        <div class="tool">
+            <h2>Base64转图片</h2>
+            <textarea id="base64Input" placeholder="在此处粘贴Base64字符串" rows="5"></textarea>
+            <button onclick="convertBase64ToImage()"><i class="fas fa-download"></i> 转换为图片</button>
+            <div id="imageOutput"></div>
+        </div>
 
-    <select id="languageSelect" onchange="changeLanguage()">
-        <option value="en">English</option>
-        <option value="zh">中文</option>
-    </select>
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+        </select>
+    </div>
 
     <script src="https://unpkg.com/i18next@20.6.1/i18next.min.js"></script>
     <script src="script.js"></script>
